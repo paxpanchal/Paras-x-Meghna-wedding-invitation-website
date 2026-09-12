@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-display: "Cinzel Decorative", "Cinzel", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-gold-300: #FEF08A;
+  --color-gold-400: #F59E0B;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B45309;
+  --color-gold-700: #78350F;
+
+  --color-maroon-900: #4A0E17;
+  --color-maroon-800: #6B1D2F;
+  --color-maroon-700: #7F1D1D;
+  --color-vermilion: #DC2626;
+  --color-marigold: #EA580C;
+  --color-saffron: #D97706;
+  --color-ranipink: #BE185D;
+  --color-peacock: #0284C7;
+  --color-emerald: #047857;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FFFDF9;
+    color: #1F1A18;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+    color: #1F1A18;
+  }
+
+  .font-title {
+    font-family: var(--font-cinzel);
+  }
+}
+
+/* Luxury Indian Wedding Gold Foil and Shimmer effects */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #78350F 0%, #D4AF37 35%, #FEF08A 50%, #F59E0B 75%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to bottom right, #D4AF37, #FEF08A, #F59E0B, #B45309) 1;
+}
+
+.gold-shimmer-btn {
+  background: linear-gradient(135deg, #991B1B 0%, #B91C1C 40%, #7F1D1D 100%);
+  border: 1.5px solid #D4AF37;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 30%, rgba(254, 240, 138, 0.45) 50%, transparent 70%);
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 0.85s ease-in-out;
+}
+
+.gold-shimmer-btn:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* Royal Indian Wedding Card Textured Borders & Backdrops */
+.bg-mandala-pattern {
+  background-image: 
+    radial-gradient(#D4AF37 0.9px, transparent 0.9px), 
+    radial-gradient(#D4AF37 0.9px, #FFFDF9 0.9px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  opacity: 0.12;
+}
+
+/* Authentic Gujarati Bandhani / Mirror-work background texture */
+.bg-bandhani-dots {
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.35) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+/* Royal Envelope 3D Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Animations for Toran, Bells, Diyas, and Petals */
+@keyframes toranSway {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+    transform-origin: top center;
+  }
+  50% {
+    transform: rotate(1.5deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes bellTinkle {
+  0%, 100% {
+    transform: rotate(-3.5deg);
+    transform-origin: top center;
+  }
+  50% {
+    transform: rotate(3.5deg);
+    transform-origin: top center;
+  }
+}
+
+@keyframes diyaFlicker {
+  0%, 100% {
+    opacity: 0.92;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-1px);
+  }
+}
+
+.animate-toran-sway {
+  animation: toranSway 5s ease-in-out infinite;
+}
+
+.animate-bell-tinkle {
+  animation: bellTinkle 3.2s ease-in-out infinite;
+}
+
+.animate-bell-tinkle-delayed {
+  animation: bellTinkle 3.6s ease-in-out 0.8s infinite;
+}
+
+.animate-diya-flicker {
+  animation: diyaFlicker 2s ease-in-out infinite;
+}
+
+/* Custom festive gold scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF9;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B45309;
+}
